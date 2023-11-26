@@ -180,7 +180,7 @@ export default function Register() {
             <Grid item xs={12}>
               <TextField
                 autoComplete="given-name"
-                name="username"
+                name="name"
                 value={user.name}
                 onChange={(e) => validation(e as React.ChangeEvent<HTMLInputElement>)}
                 onBlur={(e) => validation(e as React.ChangeEvent<HTMLInputElement>)}

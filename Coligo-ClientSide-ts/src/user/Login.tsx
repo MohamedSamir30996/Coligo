@@ -66,39 +66,55 @@ export default function Login() {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(user.username && user.password){
 
-      const loginUser = { username: user.username, password: user.password };
-      console.log(loginUser);
-      const res = await axiosInstance.post(`/users/login`, loginUser);
-      if (res) {
-        console.log(res);
-        // setId(res.data.user._id);
-        // setName(res.data.user.username);
-        dispatch(setUserData(res.data.user._id, res.data.user.username));
-        navigate("/dashboard");
+    e.preventDefault();
+    function isTokenPresent() {
+      const cookies = document.cookie.split(';');
+      for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'token' && value !== '') {
+          return true;
+        }
+      }
+      return false;
+    }
+    if (isTokenPresent()) {
+      navigate("/dashboard");
+    } else {
+      if (user.username && user.password) {
+
+        const loginUser = { username: user.username, password: user.password };
+        console.log(loginUser);
+        const res = await axiosInstance.post(`/users/login`, loginUser);
+        if (res) {
+          console.log(res);
+          // setId(res.data.user._id);
+          // setName(res.data.user.username);
+          dispatch(setUserData(res.data.user._id, res.data.user.username));
+          navigate("/dashboard");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Unauthorized",
+            text: "Check your username and password",
+          });
+        }
+
+        setUser({
+          username: "",
+          password: "",
+        });
+        setErrors({
+          usernameError: "",
+          passwordError: "",
+        });
       } else {
         Swal.fire({
           icon: "error",
-          title: "Unauthorized",
-          text: "Check your username and password",
+          title: "Missing Data",
+          text: "Enter your username and password",
         });
       }
-  
-      setUser({
-        username: "",
-        password: "",
-      });
-      setErrors({
-        usernameError: "",
-        passwordError: "",
-      });
-    }else{
-      Swal.fire({
-        icon: "error",
-        title: "Missing Data",
-        text: "Enter your username and password",
-      });
     }
   };
 

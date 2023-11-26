@@ -94,7 +94,7 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(user.username && user.email && user.password && user.confirmPassword){
+    if(user.name && user.email && user.password && user.confirmPassword){
 
       let newUser = {
         username: user.name,
@@ -181,7 +181,7 @@ export default function Register() {
             <Grid item xs={12}>
               <TextField
                 autoComplete="given-name"
-                name="username"
+                name="name"
                 value={user.name}
                 onChange={(e) => validation(e)}
                 onBlur={(e) => validation(e)}
