@@ -1,0 +1,128 @@
+.my-bg{
+  background-color: #f8f8fa;
+}
+
+.bg-gray{
+  background-color: #f8f8fa;
+}
+
+.bg-menu{
+  background-color: #18597D !important;
+}
+
+/* 4ECDC4 */
+
+.logo{
+  font-weight: bolder !important;
+  font-size: 2rem !important;
+  color: #18597D;
+  padding:0 11px;
+}
+
+.avatar{
+  width:35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-left: 15px;
+  background-color: #a8d8d6;
+  color: #18597D;
+  font-size: 18px;
+  padding: 5px;
+  text-align: center;
+}
+.search-input{
+  padding: 5px 10px;
+  border: 1px solid rgb(192, 191, 191); 
+  background-color: #f8f8fa;
+  border-radius: 20px;
+  margin-right: 3%;
+}
+
+.chatting2{
+  color: #bc5143;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.f-white{
+  color: #fff;
+}
+
+.selected-Item
+.btn-home{
+  background-color: #fb8e25;
+  padding: 10px;
+  color: #f8f8fa;
+  font-size: 1.2rem;
+  border-radius: 30px;
+}
+.btn-home:hover{
+  color: #fb8e25;
+  padding: 10px;
+  background-color: #f8f8fa;
+  border: 1.5px solid #fb8e25;
+  font-size: 1.2rem;
+  border-radius: 30px;
+}
+
+.user-info span{
+  max-height: 22px;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 5px;
+  /* background: #f8be88; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #dddddf;  */
+  background: lightblue; 
+}
+
+.error{
+  width: 90%;
+}
+
+.m-0{
+  margin: 0;
+}
+
+.text-gray{
+  color: gray;
+}
+
+.fs-1{
+  font-size: small;
+}
+
+.selected{
+  background-color: #18597D !important;
+  color:#fff !important;
+}
+
+.mb-4{
+  margin-bottom: 12px;
+}
+
+.align-center{
+  display: flex;
+  align-items: center;
+}
+
+.px-4{
+  padding:0 10px;
+}
